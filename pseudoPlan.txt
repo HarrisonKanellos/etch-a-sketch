@@ -17,3 +17,7 @@
     -Max of 100
     -Button click event, popup with prompt (implementation)
     -Should not need to change total pixels used, refer to flexbox properties
+
+## General Practice
+    -Commit often
+    -Branch and merge features
