@@ -1,0 +1,19 @@
+# Requirements
+## Setup
+    -Webpage with 16x16 grid square divs
+    -Create divs using JS
+    -Place divs inside container div
+    -Flexbox layout
+    -Create initial css styles: borderbox, margin, padding
+
+## Functionality
+### Hover Effect
+    -When mouse passes over div, change colour of div, leaving a trail
+    -Event listner for container div (likely event implementation)
+    -Add class to div or change background color of div (color change implementation)
+### Grid Size - User Input
+    -Button top of screen, creates popup for user input of grid dimension
+    -Creates new grid of specified size
+    -Max of 100
+    -Button click event, popup with prompt (implementation)
+    -Should not need to change total pixels used, refer to flexbox properties
