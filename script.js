@@ -20,3 +20,9 @@ for (let i = 0; i < 16; i++) {
         k++;
     }
 }
+
+// Hover effect
+container.addEventListener('mouseover', (event) => {
+    let target = event.target;
+    target.classList.add("dark");
+})
