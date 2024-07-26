@@ -4,6 +4,7 @@ let body = document.querySelector("body");
 let buttonContainer = document.createElement("div");
 buttonContainer.classList.add("button-container");
 let buttonResize = document.createElement("button");
+buttonResize.setAttribute("id", "buttonResize");
 buttonResize.classList.add("action-button");
 buttonResize.textContent = "Resize Grid";
 buttonContainer.appendChild(buttonResize);
@@ -35,4 +36,14 @@ for (let i = 0; i < 20; i++) {
 gridContainer.addEventListener('mouseover', (event) => {
     let target = event.target;
     target.classList.add("dark");
+})
+
+// Click resize
+buttonContainer.addEventListener('click', (event) => {
+    let target = event.target;
+    switch(target.id) {
+        case "buttonResize":
+            let size = prompt("Enter preferred size of grid: ");
+            
+    }
 })
