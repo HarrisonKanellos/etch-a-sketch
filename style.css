@@ -1,7 +1,33 @@
 *,
 *::before,
 *::after {
-    box-sizing: border box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    width: 900px;
+    height: 900px;
+    border: 3 px solid red;
+}
+
+.grid-row {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.grid-box {
+    height: 50px;
+    width: 50px;
+    flex: 1;
+    border: 3px solid black;
 }
