@@ -8,15 +8,21 @@
 
 body {
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.button-container {
+    height: 150px;
+}
+
+.action-button {
+    height: 40px;
+    width: 90px;
 }
 
 .grid-container {
-    width: 900px;
-    height: 900px;
-    border: 3 px solid red;
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -32,9 +38,9 @@ body {
     height: 100%;
     width: 20px;
     flex: 1;
-    border: 3px solid black;
+    border: 1px solid black;
 }
 
-.dark {
+.change-color {
     background-color: gray;
 }
