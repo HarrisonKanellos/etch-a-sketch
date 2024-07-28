@@ -1,9 +1,14 @@
 let body = document.querySelector("body");
 
+// Create etch-a-sketch container
+let easContainer = document.createElement("div");
+easContainer.classList.add("eas-container");
+body.appendChild(easContainer);
+
 // Create button container
 let buttonContainer = document.createElement("div");
 buttonContainer.classList.add("button-container");
-body.appendChild(buttonContainer);
+easContainer.appendChild(buttonContainer);
 
 // Create resize button
 let buttonResize = document.createElement("button");
@@ -29,7 +34,23 @@ buttonContainer.appendChild(buttonClear);
 // Create grid container
 let gridContainer = document.createElement("div");
 gridContainer.classList.add("grid-container");
-body.appendChild(gridContainer);
+easContainer.appendChild(gridContainer);
+
+// Create classic container
+let classicContainer = document.createElement("div");
+classicContainer.classList.add("classic-container");
+easContainer.appendChild(classicContainer);
+
+// Create circles and title
+let circle1 = document.createElement("button");
+let circle2 = document.createElement("button");
+let title = document.createElement("h1");
+circle1.classList.add("circle");
+circle2.classList.add("circle");
+title.textContent = "Etch A Sketch";
+classicContainer.appendChild(circle1);
+classicContainer.appendChild(title);
+classicContainer.appendChild(circle2);
 
 // Create grid 16x16
 makeGrid(16);

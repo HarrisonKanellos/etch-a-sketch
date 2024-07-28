@@ -8,23 +8,49 @@
 
 body {
     width: 100vw;
+    min-width: 1005px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eas-container {
+    width: 60vw;
+    height: 78vh;
+    min-width: 600px;
+    background-color: rgb(255, 0, 30);
+    border: 5px solid red;
+    border-radius: 80px;
 }
 
 /* Buttons */
 .button-container {
-    height: 150px;
+    height: 80px;
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .action-button {
+    box-sizing: content-box;
     height: 40px;
     width: 90px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 5px solid rgb(79, 79, 79);
+    border-radius: 10px;
 }
 
 /* Grid */
 .grid-container {
-    width: 550px;
-    height: 550px;
+    box-sizing: content-box;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -41,6 +67,31 @@ body {
     width: 20px;
     flex: 1;
     border: 1px solid black;
+}
+
+/* Classic features */
+.classic-container {
+    width: 50vw;
+    min-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px;
+    font-family: cursive;
+    font-style: italic;
+    min-width: 301px;
+    color: #FFD700;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgb(79, 79, 79)
 }
 
 /* Hover Effect */
