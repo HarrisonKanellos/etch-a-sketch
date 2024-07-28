@@ -10,6 +10,7 @@ body {
     width: 100vw;
 }
 
+/* Buttons */
 .button-container {
     height: 150px;
 }
@@ -19,6 +20,7 @@ body {
     width: 90px;
 }
 
+/* Grid */
 .grid-container {
     width: 550px;
     height: 550px;
@@ -41,6 +43,7 @@ body {
     border: 1px solid black;
 }
 
+/* Hover Effect */
 .change-color {
     background-color: gray;
 }

@@ -17,7 +17,11 @@
     -Max of 100
     -Button click event, popup with prompt (implementation)
     -Should not need to change total pixels used, refer to flexbox properties
-
+### Clear Grid
+    -Button that clears grid
+### Erase Grid
+    -Button that when clicked enables erase
+    -When clicked, user can erase grid coloring by holding down mouse
 ## General Practice
     -Commit often
     -Branch and merge features

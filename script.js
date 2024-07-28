@@ -12,6 +12,13 @@ buttonResize.classList.add("action-button");
 buttonResize.textContent = "Resize";
 buttonContainer.appendChild(buttonResize);
 
+// Create erase button
+let buttonErase = document.createElement("button");
+buttonErase.setAttribute("id", "button-erase");
+buttonErase.classList.add("action-button");
+buttonErase.textContent = "Erase";
+buttonContainer.appendChild(buttonErase);
+
 // Clear button
 let buttonClear = document.createElement("button");
 buttonClear.setAttribute("id", "button-clear");
@@ -28,22 +35,34 @@ body.appendChild(gridContainer);
 makeGrid(16);
 
 // Hover effect
-gridContainer.addEventListener('mouseover', (event) => {
-    let target = event.target;
-    target.classList.add("change-color");
-})
+gridContainer.addEventListener('mouseover', handleHover);
 
 // Click button events
-buttonContainer.addEventListener('click', (event) => {
+buttonContainer.addEventListener('click', handleButtonClick);
+
+function handleHover(event) {
     let target = event.target;
-    switch(target.id) {
+    target.classList.add("change-color");
+}
+
+function handleButtonClick(event) {
+    let target = event.target;
+    switch (target.id) {
         case "button-resize":
             let size = prompt("Enter preferred size of grid: ");
+            while (size < 1 || size > 100) {
+                size = prompt("Enter preferred size of grid: ");
+            }
             makeGrid(size);
+            break;
         case "button-clear":
             clearGrid();
+            break;
+        case "button-erase":
+            enableErase();
+            break;
     }
-})
+}
 
 function makeGrid(dimension) {
     while (gridContainer.firstChild) {
@@ -70,4 +89,33 @@ function clearGrid() {
     for (let i = 0, len = colorBoxes.length; i < len; i++) {
         colorBoxes.item(i).classList.remove("change-color");
     }
+}
+
+function enableErase() {
+    let mouseIsDown = false;
+    function mouseDown() {
+        mouseIsDown = true;
+    }
+    function mouseUp() {
+        mouseIsDown = false;
+    }
+    function mouseMoving(event) {
+        if (mouseIsDown) {
+            let target = event.target;
+        target.classList.remove("change-color");
+        }
+    }
+    gridContainer.removeEventListener('mouseover', handleHover);
+    document.addEventListener('keydown', (event) => {
+        if (event.key == "Escape") {
+            gridContainer.removeEventListener('mousedown', mouseDown);
+            gridContainer.removeEventListener('mouseup', mouseUp);
+            gridContainer.removeEventListener('onmousemove', mouseMoving);
+            gridContainer.addEventListener('mouseover', handleHover);
+            return false;
+        }
+    })
+    gridContainer.addEventListener('mousedown', mouseDown);
+    gridContainer.addEventListener('mouseup', mouseUp);
+    gridContainer.addEventListener('mousemove', mouseMoving);
 }
